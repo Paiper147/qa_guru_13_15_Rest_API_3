@@ -13,6 +13,8 @@ import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static qa.guru.specs.LoginSpec.loginRequestSpec;
+import static qa.guru.specs.LoginSpec.loginResponseSpec;
 
 public class ReqresInExtendedTests {
 
@@ -89,6 +91,25 @@ public class ReqresInExtendedTests {
                 .log().status()
                 .log().body()
                 .statusCode(200)
+                .extract().as(LoginBodyResponseLombokModel.class);
+
+        //assertJ
+        assertThat(response.getToken()).isEqualTo("QpwL5tke4Pnpja7X4");
+    }
+
+    @Test
+    void loginWithLombokModelWithSpecTest() {
+        LoginBodyRequestLombokModel requestBodyLombok = new LoginBodyRequestLombokModel();
+        requestBodyLombok.setEmail("eve.holt@reqres.in");
+        requestBodyLombok.setPassword("cityslicka");
+
+        LoginBodyResponseLombokModel response = given()
+                .spec(loginRequestSpec)
+                .body(requestBodyLombok)
+                .when()
+                .post()
+                .then()
+                .spec(loginResponseSpec)
                 .extract().as(LoginBodyResponseLombokModel.class);
 
         //assertJ
