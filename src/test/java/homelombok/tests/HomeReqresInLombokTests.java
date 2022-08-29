@@ -1,11 +1,11 @@
-package homeLombok.tests;
+package homelombok.tests;
 
-import homeLombok.lombokModels.*;
+import homelombok.lombokModels.*;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 
-import static homeLombok.specs.HomeReqresInSpec.homeReqresRequestSpec;
-import static homeLombok.specs.HomeReqresInSpec.homeReqresResponseSpec;
+import static homelombok.specs.HomeReqresInSpec.homeReqresRequestSpec;
+import static homelombok.specs.HomeReqresInSpec.homeReqresResponseSpec;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.is;

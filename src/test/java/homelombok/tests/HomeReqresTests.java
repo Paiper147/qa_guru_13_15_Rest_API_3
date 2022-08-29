@@ -1,4 +1,4 @@
-package homeLombok.tests;
+package homelombok.tests;
 
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
