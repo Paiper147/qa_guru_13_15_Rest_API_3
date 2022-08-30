@@ -1,6 +1,6 @@
 package homelombok.tests;
 
-import homelombok.lombokModels.*;
+import homelombok.models.*;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 

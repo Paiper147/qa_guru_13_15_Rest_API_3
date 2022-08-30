@@ -1,9 +1,9 @@
-package homelombok.lombokModels;
+package homelombok.models;
 
 import lombok.Data;
 
 @Data
-public class UserDataUpdateRequestBody {
+public class CreateRequestBody {
     private String name;
     private String job;
 }

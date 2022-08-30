@@ -1,4 +1,4 @@
-package homelombok.lombokModels;
+package homelombok.models;
 
 import lombok.Data;
 
